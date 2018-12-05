@@ -1,0 +1,29 @@
+//////////////////////////////////////////////////
+//			Navigation 							//
+//////////////////////////////////////////////////
+
+.nav {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	@include container-flex-center; // move nav buttons to center on medium screens and above 
+	@include mq(medium) {
+		@include margin-top-bottom(18px);
+		
+	}
+	
+  	@include e(item) {  // nav__item 
+    	@extend %nav-item-horz;
+
+		a {			// .nav__item a
+			width: 100%;
+			text-decoration: none;  // get rid of underlines
+			@extend %nav-item-link;
+			color: palette(grey, light);
+			transition: all $trns--duration-fast;
+			&:hover {
+				@extend %nav-item-on;
+			}
+    	}
+
+  	}
+}
