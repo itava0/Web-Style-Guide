@@ -3,27 +3,24 @@
 //////////////////////////////////////////////////
 
 .nav {
-	margin-top: 10px;
-	margin-bottom: 10px;
-	@include container-flex-center; // move nav buttons to center on medium screens and above 
-	@include mq(medium) {
-		@include margin-top-bottom(18px);
-		
-	}
-	
-  	@include e(item) {  // nav__item 
-    	@extend %nav-item-horz;
+  @include flexbox($direction: column);
+  @include mq(medium){
+    @include flexbox($direction: row, $justify: center);
+  }
 
-		a {			// .nav__item a
-			width: 100%;
-			text-decoration: none;  // get rid of underlines
-			@extend %nav-item-link;
-			color: palette(grey, light);
-			transition: all $trns--duration-fast;
-			&:hover {
-				@extend %nav-item-on;
-			}
-    	}
-
-  	}
+  &__item {
+    text-align: center;
+    a {
+      display: inline-block;
+      color: $grey;
+      text-decoration: none;
+      padding: 15px;
+      border-radius: 5px;
+      width: 100%;
+      transition: background-color 0.2s ease-in 0.1s;
+      &:hover {
+        background-color: $color-primary;
+      }
+    }
+  }
 }

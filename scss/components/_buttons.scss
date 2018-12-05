@@ -1,26 +1,20 @@
 // ==========================================================================
 // Buttons
 // ==========================================================================
-//////////////////////////////////////////////////
-//		Butttons 		  						//
-//////////////////////////////////////////////////
 
-// color buttons when theme__colors class is included
-.theme__colors.btn {
-  @include ui-colors($ui-colors);
+.btn {
+  @include bt-colors($bt-colors);
 }
 
-// select any class with beginning of btn--
 [class^="btn--"] {
  	@extend %button;
- 	margin-bottom: em(20px, 14px);
-	text-transform: uppercase;  // 	Capitalize first letter of each word
-	transition: box-shadow $trns--duration-slow;
+	 margin-bottom: em(20px, 14px);
+	 text-transform: uppercase;
+	 margin: 10px em(20px);
 	&:hover {
-		box-shadow: 0 0 28px 0 rgba($black, .5) inset;
+		box-shadow: 0 0 28px 0 rgba($grey, .5);
 	}
 	@include mq(medium) {
-		@include margin-left-right(20px);
-		width: 175px;
+		width: 170px;
 	}
 }

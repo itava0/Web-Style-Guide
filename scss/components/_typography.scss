@@ -12,11 +12,11 @@
 // Base container
 .container {
 	@extend .centered;
-	color: palette(grey);
   	font-size: $base__font-size;
   	font-family: $font-family--primary;
   	line-height: ($base__line-height * $base__font-size);
-	padding: 20px 20px;
+		padding: 20px 20px;
+		color: lighten($color: gray, $amount: 2);
 
 	@include mq(large) {
 		max-width: $pg-max-w;
@@ -29,11 +29,23 @@
 
 .headline {
 	&--primary {
-		@extend %hdln-prim;
-
+		@extend %center-align;
+	width: 80%;
+	color: $color-primary;
+  	font-weight: $font-weight--ultra-bold;
+  	font-size: em(32px);
+	line-height: ($base__line-height *.8);
+  	margin-top: 0;
+	@include mq(medium) {
+		text-align: left;
+		padding-left: 20px;
+	}
 	}
 	&--secondary {
-		@extend %hdln-sec;
+		color: palette(grey, medium);
+  	font-weight: $font-weight--light;
+	font-size: em(18px);
+	margin-bottom: 15px;
 	}
 }
 
@@ -48,7 +60,8 @@
 // =============== Blockquotes ====================
 
 .blockquote {
-	@include margin-left-right(30px, 35px);
+	margin-left: 30px;
+	margin-right: 35px;
 	margin-top: 30px;
 	padding-left: 30px;
 	font-weight: $font-weight--medium;
