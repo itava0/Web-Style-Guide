@@ -1,80 +1,66 @@
-//////////////////////////////////////////////////
-//			Typography  						//
-//////////////////////////////////////////////////
-
-// ============ Import if Google Fonts URL is defined ==============
+/* ================================= 
+  Typography
+==================================== */
 
 @if variable-exists(font-url--google) {
   @import url($font-url--google);
 }
 
-// =============== Base Container Typography =====
-// Base container
 .container {
-	@extend .centered;
-  	font-size: $base__font-size;
-  	font-family: $font-family--primary;
-  	line-height: ($base__line-height * $base__font-size);
-		padding: 20px 20px;
-		color: lighten($color: gray, $amount: 2);
+  font-size: $base__font-size;
+  font-family: $font-family--primary;
+  line-height: ($base__line-height * $base__font-size);
+  padding: 20px 20px;
+  color: lighten($color: gray, $amount: 2);
 
-	@include mq(large) {
-		max-width: $pg-max-w;
-	}
+  @include mq(large) {
+    max-width: em(1200px);
+  }
 }
-
-
-
-// =============== Headlines ======================
 
 .headline {
-	&--primary {
-		@extend %center-align;
-	width: 80%;
-	color: $color-primary;
-  	font-weight: $font-weight--ultra-bold;
-  	font-size: em(32px);
-	line-height: ($base__line-height *.8);
-  	margin-top: 0;
-	@include mq(medium) {
-		text-align: left;
-		padding-left: 20px;
-	}
-	}
-	&--secondary {
-		color: palette(grey, medium);
-  	font-weight: $font-weight--light;
-	font-size: em(18px);
-	margin-bottom: 15px;
-	}
+  &--primary {
+    text-align: center;
+    width: 80%;
+    color: $color-primary;
+    font-weight: $font-weight--ultra-bold;
+    font-size: em(28px);
+    line-height: ($base__line-height * 0.8);
+    margin-top: 0;
+    @include mq(medium) {
+      text-align: left;
+      padding-left: 20px;
+    }
+  }
+  &--secondary {
+    font-weight: $font-weight--light;
+    font-size: em(16px);
+    margin-bottom: 15px;
+  }
 }
-
-// =============== Links =========================
 
 .link {
-	font-weight: $font-weight--bold;
-	color: $color-secondary;
-	text-decoration: none; 	//  remove underlines
+  font-weight: $font-weight--bold;
+  color: $color-secondary;
+  text-decoration: none;
 }
 
-// =============== Blockquotes ====================
-
 .blockquote {
-	margin-left: 30px;
-	margin-right: 35px;
-	margin-top: 30px;
-	padding-left: 30px;
-	font-weight: $font-weight--medium;
-	font-style: italic;
- 	font-size: em(25px);
-	line-height: 1.4em;
-	border-left: 10px solid $color-primary;
-	border-radius: 10px;
-	@include mq(medium) {
-		max-width: 700px;
-	}
+  margin-left: 30px;
+  margin-right: 35px;
+  margin-top: 30px;
+  padding-left: 30px;
+  font-weight: $font-weight--medium;
+  font-style: italic;
+  font-size: em(20px);
+  line-height: 1.4em;
+  border-left: 8px solid $color-primary;
+  border-radius: 10px;
+  @include mq(medium) {
+    max-width: 700px;
+  }
 }
 
 .card {
-	max-width: 1050px;
+  max-width: 1050px;
 }

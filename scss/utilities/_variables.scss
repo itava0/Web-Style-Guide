@@ -1,113 +1,84 @@
-//////////////////////////////////////////////////
-//			Variables 							//
-//////////////////////////////////////////////////
+/* ================================= 
+  Variables
+==================================== */
 
 // ===============Fonts ==========================
 
-//	 	Font stack
-$font-url--google      : 'https://fonts.googleapis.com/css?family=Merriweather:100,300,400,700,900|Raleway:100,300,400,700,900';
-$font-family--primary  : 'Merriweather', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-family--secondary  : 'Raleyway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-url--google: "https://fonts.googleapis.com/css?family=Merriweather:100,300,400,700,900|Raleway:100,300,400,700,900";
+$font-family--primary: "Merriweather", "Helvetica Neue", Helvetica, Arial,
+  sans-serif;
+$font-family--secondary: "Raleyway", "Helvetica Neue", Helvetica, Arial,
+  sans-serif;
 
 // 		Font weights
 
-$font-weight--thin       : 100;
-$font-weight--light      : 300;
-$font-weight--medium     : 400;
-$font-weight--bold       : 700;
-$font-weight--ultra-bold : 900;
+$font-weight--thin: 100;
+$font-weight--light: 300;
+$font-weight--medium: 400;
+$font-weight--bold: 700;
+$font-weight--ultra-bold: 900;
 
 //		Font size
-$base__font-size	: 16px;
-$base__line-height	: 1.5;
-
-// =================Colors========================
-
-//		Base colors
-
-$white	: #fff;
-$black	: #101010;
-$grey	: #676767;
-
-//		Theme colors
-//			-color names chosen using "name that color" @ http://chir.ag/projects/name-that-color
-
-$sunglo				: #E4757A;
-$mauve				: #927BC1;
-$lavender			: #DEB2EE;
-$harvest-gold		: #E0B47C;
-$granny-smith		: #88d9a0;
-$shakespeare		: #3FABCA;
-$copperfield		: #D9856D;
-$neptune			: #78C0AB;
-$emerald			: #63CC82;
-$malibu				: #51DDFC;
-$turqouise			: #50E3C2;
-$riptide			: #80E8D1;
-$coral				: #FD7856;
-$anakiwa			: #7EE6FD;
-$sea-pink			: #EC9FA3;
-$vivid-tangerine	: #fd9f85;
-
-//		Colors by usage
-
-$color-primary		: $turqouise;
-$color-secondary	: $malibu;
+$base__font-size: 16px;
+$base__line-height: 1.5;
 
 // UI Colors
 
+$white: #fff;
+$black: #101010;
+$grey: #676767;
+
+$sunglo: #e4757a;
+$mauve: #927bc1;
+$lavender: #deb2ee;
+$harvest-gold: #e0b47c;
+$granny-smith: #88d9a0;
+$shakespeare: #3fabca;
+$copperfield: #d9856d;
+$neptune: #78c0ab;
+$emerald: #63cc82;
+$malibu: #51ddfc;
+$turqouise: #50e3c2;
+$riptide: #80e8d1;
+$coral: #fd7856;
+$anakiwa: #7ee6fd;
+$sea-pink: #ec9fa3;
+$vivid-tangerine: #fd9f85;
+
+$color-primary: $turqouise;
+$color-secondary: $malibu;
+
+// Buttons Colors
+
 $bt-colors: (
- 	default : $color-secondary,
-  	success : $emerald,
-  	error   : $sunglo,
-  	warning : $coral,
-  	info    : $mauve
+  default: $malibu,
+  success: $emerald,
+  error: $sunglo,
+  warning: $coral,
+  info: $mauve
 );
 
-//	Grid Colors
-
+// Grid Colors
 $grid-colors: (
-	$sunglo,	
-	$mauve,				
-	$lavender,			
-	$anakiwa,		
-	$granny-smith,		
-	$shakespeare,		
-	$sea-pink,		
-	$vivid-tangerine,			
-	$emerald,			
-	$malibu,
-	$turqouise,			
-	$riptide				
+  $sunglo,
+  $mauve,
+  $lavender,
+  $anakiwa,
+  $granny-smith,
+  $shakespeare,
+  $sea-pink,
+  $vivid-tangerine,
+  $emerald,
+  $malibu,
+  $turqouise,
+  $riptide
 );
-
-// ============= Borders ===========================
-$border--round				: 50%;
-$border--rounded-corners	: 5px;
-$border--theme				: 8px solid $color-primary;
-
-// ============= Breakpoints =======================
-
-$brkpoint--mobile   : 1px;
-$brkpoint--tablet   : 769px;
-$brkpoint--desktop  : 1200px;
-
-
+// Breakpoints
+$brkpoint--mobile: 1px;
+$brkpoint--tablet: 769px;
+$brkpoint--desktop: 1200px;
 // ============= Grid ==============================
-
-// Grid Structure, grid color variables located under colors
-
-$g-col-width    : 65px;
-$g-gutter-width : 20px;
-$g-col-count    : 12;
-$g-cont-max-w   : 1200px;
-
-// ============== Page Width =======================
-
-$pg-max-w	: 1200px;
-
-// ============== CSS Transitions ===================
-
-$trns--duration-fast	: 0.4s;
-$trns--duration-slow	: 0.8s;
-
+$g-col-width: 65px;
+$g-gutter-width: 20px;
+$g-col-count: 12;
+$g-cont-max-w: 1200px;

@@ -1,21 +1,8 @@
-//////////////////////////////////////////////////
-//			Mixins 							
-//////////////////////////////////////////////////
+/* ================================= 
+  Mixins
+==================================== */
 
-// ============== BEM selectors ==================
-
-@mixin e($element) {
-  &__#{$element} {
-    @content;
-  }
-}
-@mixin m($modifier) {
-  &--#{$modifier} {
-    @content;
-  }
-}
-
-// ============= Flexbox Settings =================
+// Flexbox
 
 @mixin flexbox($display: flex, $direction: null, $wrap: null, $justify: null) {
   display: $display;
@@ -24,6 +11,9 @@
   justify-content: $justify;
   @content;
 }
+
+// Buttons Background Color
+
 @mixin bt-colors($map) {
   @each $theme, $color in $map {
     @include m($theme) {
@@ -31,24 +21,9 @@
     }
   }
 }
-// Grid columns background colors
-@mixin grid-colors($map) {
-  // $map = which color map to sort through
-  $i: 1; // temporary increment variable
-  @each $color in $map {
-    @include e("col--#{$i}") {
-      background-color: $color;
-      // @extend %button;
-      color: $grey;
-      text-align: left;
-      @include mq(medium) {
-        text-align: center;
-      }
-    }
-    $i: $i + 1;
-  }
-}
-// ============= Media Queries ====================
+
+//Media Queries
+
 @mixin mq($break) {
   @if $break == "small" {
     @media (min-width: $brkpoint--mobile) and (max-width: $brkpoint--tablet) {
@@ -64,64 +39,50 @@
     }
   }
 }
-// ============= Grid Columns ======================
+
+// Grid Mixins
+
 @mixin g-columns {
   @for $i from 1 through $g-col-count {
     $context: g-context($g-col-width, $g-col-count, $g-gutter-width) !global;
-    $target: ($g-col-width * $i) +
-      (
-        $g-gutter-width * ($i - 1)
-      ); // Generate and output the column modifier classes
+    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
     &--#{$i} {
       width: percentage($target / $context);
     }
   }
 }
-// Adjacent sibling margins
+
+// Grid columns background colors
+@mixin grid-colors($map) {
+  $i: 1;
+  @each $color in $map {
+    @include e("col--#{$i}") {
+      background-color: $color;
+      color: $grey;
+      text-align: left;
+      @include mq(medium) {
+        text-align: center;
+      }
+    }
+    $i: $i + 1;
+  }
+}
+
 @mixin doubly($margin: 1em) {
   & + & {
     margin-left: $margin;
     @content;
   }
 }
-// ============= Generic Helper Mixins ============
-// set left and right padding in one step
-@mixin pad-left-right($left: 15px, $right: null) {
-  // $left(optional) : left padding, defaults to 15px // $right(optional) : right padding, defaults to null
-  @if ($right == null) {
-    // if no value is given for $right make padding equal on both sides
-    $right: $left;
+
+@mixin e($element) {
+  &__#{$element} {
+    @content;
   }
-  padding-left: $left;
-  padding-right: $right;
 }
-// set top and bottom padding in one step
-@mixin pad-top-bottom($top: 15px, $bottom: null) {
-  // $top(optional) : top padding, defaults to 15px // $bottom(optional) : bottom padding, defaults to null
-  @if ($bottom == null) {
-    // if no value is given for $bottom make padding equal on top and bottom
-    $bottom: $top;
+
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
   }
-  padding-top: $top;
-  padding-bottom: $bottom;
-}
-// set left and right margin in one step
-@mixin margin-left-right($left: 15px, $right: null) {
-  // $left(optional) : left margin, defaults to 15px // $right(optional) : right margin, defaults to null
-  @if ($right == null) {
-    // if no value is given for $right make padding equal on both sides
-    $right: $left;
-  }
-  margin-left: $left;
-  margin-right: $right;
-}
-// set top and bottom margin in one step
-@mixin margin-top-bottom($top: 15px, $bottom: null) {
-  // $top(optional) : top margin, defaults to 15px // $bottom(optional) : bottom margin in pixels, defaults to null
-  @if ($bottom == null) {
-    // if no value is given for $bottom make margin equal on top and bottom
-    $bottom: $top;
-  }
-  margin-top: $top;
-  margin-bottom: $bottom;
 }

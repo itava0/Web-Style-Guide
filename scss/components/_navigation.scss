@@ -4,7 +4,7 @@
 
 .nav {
   @include flexbox($direction: column);
-  @include mq(medium){
+  @include mq(medium) {
     @include flexbox($direction: row, $justify: center);
   }
 
@@ -17,9 +17,10 @@
       padding: 15px;
       border-radius: 5px;
       width: 100%;
-      transition: background-color 0.2s ease-in 0.1s;
+      transition:0.3s ease-in 0.1s;
       &:hover {
         background-color: $color-primary;
+        color: $white;
       }
     }
   }

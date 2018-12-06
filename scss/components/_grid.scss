@@ -1,8 +1,6 @@
-// ==========================================================================
-// 		Grid system
-// ==========================================================================
-
-// Center elements
+/* ================================= 
+  Grid System
+==================================== */
 
 .centered {
   @include mq(medium) {
@@ -11,11 +9,9 @@
   }
 }
 
-// Create grid rows
 .grid {
   &__row {
     @extend %clearfix;
-    @extend .centered;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -27,26 +23,23 @@
     }
 
     &--12 {
-     padding-left: em(5px);
-     padding-right: em(5px);
+      padding-left: em(5px);
+      padding-right: em(5px);
     }
-     @include mq(large) {
-       max-width: $g-cont-max-w;
+    @include mq(large) {
+      max-width: $g-cont-max-w;
     }
   }
 }
 
-// create grid columns
 .grid__col {
   @include mq(medium) {
     @include g-columns;
   }
 }
 
-// Column styles
-// Select any class beginning with grid__col--
 [class^="grid__col--"] {
-  border-radius: $border--rounded-corners;
+  border-radius: em(5px);
   padding: em(8px) em(10px);
   margin-top: em(5px);
   margin-bottom: em(5px);
@@ -56,7 +49,6 @@
   }
 }
 
-// style columns when theme colors applied
 .theme__colors.grid {
   @include grid-colors($grid-colors);
 }

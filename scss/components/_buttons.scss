@@ -1,20 +1,20 @@
-// ==========================================================================
-// Buttons
-// ==========================================================================
-
+/* ================================= 
+  Buttons
+==================================== */
 .btn {
   @include bt-colors($bt-colors);
 }
 
 [class^="btn--"] {
- 	@extend %button;
-	 margin-bottom: em(20px, 14px);
-	 text-transform: uppercase;
-	 margin: 10px em(20px);
-	&:hover {
-		box-shadow: 0 0 28px 0 rgba($grey, .5);
-	}
-	@include mq(medium) {
-		width: 170px;
-	}
+  @extend %button;
+  margin-bottom: em(20px, 14px);
+  text-transform: uppercase;
+  margin: 10px em(4px);
+  &:hover {
+    box-shadow: 0 0 28px 0 rgba($grey, 0.5);
+  }
+  @include mq(medium) {
+    width: 168px;
+    margin-left: em(40px);
+  }
 }
