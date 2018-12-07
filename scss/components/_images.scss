@@ -18,7 +18,7 @@
     margin-bottom: 20px;
     max-width: 100%;
     padding: 10px;
-    border: 0.1px $grey solid;
+    border: 0.1px lighten($color: $grey, $amount: 40) solid;
     box-shadow: 0 0 28px 0 rgba($grey, 0.3);
   }
 }
