@@ -24,7 +24,7 @@
       box-shadow: 0 0 28px 0 rgba($grey, 0.3);
     }
     &::placeholder {
-      font-weight: 500;
+      font-weight: $font-weight--medium;
     }
   }
 }
