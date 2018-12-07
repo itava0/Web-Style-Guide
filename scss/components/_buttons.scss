@@ -18,3 +18,10 @@
     margin-left: em(40px);
   }
 }
+
+.btn--default[value="Login"] {
+  @include mq(medium) {
+    margin-left: 0;
+    width: 100%;
+  }
+}
